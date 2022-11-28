@@ -13,7 +13,7 @@ module "ecs" {
   asg_max              = 3
   desired_capacity     = 1
   asg_target_capacity  = 80
-  imageURI             = "895249166333.dkr.ecr.us-east-1.amazonaws.com/spring:latest"
+  imageURI             = "895249166333.dkr.ecr.us-east-1.amazonaws.com/myimages:latest"
   container_cpu        = 100
   container_memory     = 512
   containerPort        = 8090

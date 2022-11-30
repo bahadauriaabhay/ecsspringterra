@@ -2,7 +2,9 @@ output "alb_dns_name" {
   value = aws_lb.test.dns_name
 }
 
-
+output "task_definition" {
+  value = aws_ecs_task_definition.task.arn
+}
 
 
 

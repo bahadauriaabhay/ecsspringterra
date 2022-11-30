@@ -40,7 +40,7 @@ resource "aws_ecs_service" "ecs-service" {
     depends_on = [
     aws_ecs_task_definition.task
   ]
-  lifecycle {
-    ignore_changes = [task_definition]
-  }
+  #lifecycle {
+  #  ignore_changes = [task_definition]
+  #}
 }

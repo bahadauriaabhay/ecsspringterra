@@ -31,26 +31,26 @@ resource "aws_route_table_association" "us_east_1b_public" {
 
 
 resource "aws_subnet" "public_us_east_1a" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = var.subnet_cidr1
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = var.subnet_cidr1
   availability_zone = "us-east-1a"
 }
 
 resource "aws_subnet" "private_us_east_1a" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = var.subnet_cidr2
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = var.subnet_cidr2
   availability_zone = "us-east-1a"
 }
 
 resource "aws_subnet" "public_us_east_1b" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = var.subnet_cidr3
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = var.subnet_cidr3
   availability_zone = "us-east-1b"
 }
 
 resource "aws_subnet" "private_us_east_1b" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = var.subnet_cidr4
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = var.subnet_cidr4
   availability_zone = "us-east-1b"
 }
 

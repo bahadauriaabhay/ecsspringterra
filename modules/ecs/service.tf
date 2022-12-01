@@ -25,17 +25,17 @@ output "ecs-service-role-arn" {
 }
 
 resource "aws_ecs_service" "ecs-service" {
-  	name            = "aws_ecs_service-${var.name}"
-  	iam_role        = aws_iam_role.ecs-service-role.arn
-  	cluster         = var.name
-  	task_definition = aws_ecs_task_definition.task.arn
-  	desired_count   = var.desired_count
+  	name                 = "aws_ecs_service-${var.name}"
+  	iam_role             = aws_iam_role.ecs-service-role.arn
+  	cluster              = var.name
+  	task_definition      = aws_ecs_task_definition.task.arn
+  	desired_count        = var.desired_count
     force_new_deployment = true
 
   	load_balancer {
-    	target_group_arn  = aws_lb_target_group.test.arn
-    	container_port    = var.containerPort
-    	container_name    = "app-${var.name}"
+    	target_group_arn   = aws_lb_target_group.test.arn
+    	container_port     = var.containerPort
+    	container_name     = "app-${var.name}"
 	}
     depends_on = [
     aws_ecs_task_definition.task

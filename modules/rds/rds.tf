@@ -4,20 +4,20 @@ resource "random_string" "rds_db_password" {
 }
 
 resource "aws_db_instance" "this" {
-  allocated_storage    = var.allocated_storage
-  db_name              = var.db_name
-  engine               = var.engine
-  engine_version       = var.engine_version
-  instance_class       = var.instance_class
-  username             = var.username
-  password             = random_string.rds_db_password.result
-  parameter_group_name = var.parameter_group_name
-  skip_final_snapshot  = var.skip_final_snapshot
+  allocated_storage      = var.allocated_storage
+  db_name                = var.db_name
+  engine                 = var.engine
+  engine_version         = var.engine_version
+  instance_class         = var.instance_class
+  username               = var.username
+  password               = random_string.rds_db_password.result
+  parameter_group_name   = var.parameter_group_name
+  skip_final_snapshot    = var.skip_final_snapshot
   vpc_security_group_ids = var.vpc_security_group_ids     
-  db_subnet_group_name = var.db_subnet_group_name
+  db_subnet_group_name   = var.db_subnet_group_name
 
 }
-
+####aws_ssm_parameter_store
 resource "aws_ssm_parameter" "rds_endpoint" {
   name  = "/${var.db_name}/ENDPOINT"
   type  = "String"

@@ -22,6 +22,7 @@ resource "aws_iam_role_policy_attachment" "aws-ssm-parameter" {
   role       = aws_iam_role.ecsTaskExecutionRole.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMReadOnlyAccess"
 }
+####task_definition
 resource "aws_ecs_task_definition" "task" {
   family = "task"
   container_definitions = jsonencode([
